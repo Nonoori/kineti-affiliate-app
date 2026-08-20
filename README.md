@@ -1,2 +1,2 @@
-# kineti-affiliate-app
+# kineti-affiliate
 Created via Acode
