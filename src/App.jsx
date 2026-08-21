@@ -511,7 +511,7 @@ const navigateTo = (page) => {
 
 
 
-            </div>
+            
           </div>
         </div>
 
