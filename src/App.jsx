@@ -119,14 +119,19 @@ export default function App() {
 
 
       {/* Term */}
-const [currentPage, setCurrentPage] = useState('home'); // 'home' | 'terms' | 'privacy'
 
+const [currentPage, setCurrentPage] = useState('home'); // 'home' | 'terms' | 'privacy'
+const navigateTo = (page) => {
+    window.scrollTo({ top: 0, behavior: 'instant' });
+    setCurrentPage(page);
+  };
+  // Render halaman biasa (bukan pop-up / modal)
   if (currentPage === 'terms') {
-    return <TermsConditions onBack={() => setCurrentPage('home')} />;
+    return <TermsConditions onNavigate={navigateTo} />;
   }
 
   if (currentPage === 'privacy') {
-    return <PrivacyPolicy onBack={() => setCurrentPage('home')} />;
+    return <PrivacyPolicy onNavigate={navigateTo} />;
   }
       {/* term */}
 
@@ -472,21 +477,34 @@ const [currentPage, setCurrentPage] = useState('home'); // 'home' | 'terms' | 'p
                 <li><a href="#" className="hover:text-white">Sign up</a></li>
               </ul>
             </div>
-            <div>
-              <div className="font-bold text-white mb-2">Legal</div>
+            
 
 
 
 
 
       {/* Bagian Link Footer */}
-      <ul className="space-y-1">
-        
-          <li><a href="src/TermsConditions.jsx" className="hover:text-white">Terms & Conditions</a>
-        </li>
-        <li><a href="src/PrivacyPolicy.jsx" className="hover:text-white">Privacy Policy</a>
-        </li>
-      </ul>
+        <div>
+          <div className="font-bold text-white mb-2">Legal</div>
+          <ul className="space-y-1 text-slate-400">
+            <li>
+              <button 
+                onClick={() => navigateTo('terms')} 
+                className="hover:text-white text-left transition"
+              >
+                Terms &amp; Conditions
+              </button>
+            </li>
+            <li>
+              <button 
+                onClick={() => navigateTo('privacy')} 
+                className="hover:text-white text-left transition"
+              >
+                Privacy Policy
+              </button>
+            </li>
+          </ul>
+        </div>
       {/* Bagian Link Footer */}
 
 
