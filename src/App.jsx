@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import TermsConditions from './TermsConditions';
 import PrivacyPolicy from './PrivacyPolicy';
@@ -129,7 +128,6 @@ export default function App() {
   const [activeTab, setActiveTab] = useState('All');
   const [openFaq, setOpenFaq] = useState(0);
 
-  // Cek session login saat web pertama kali dimuat
   useEffect(() => {
     const saved = localStorage.getItem('currentUser');
     if (saved) {
@@ -154,7 +152,7 @@ export default function App() {
     setCurrentPage('home');
   };
 
-  // Navigasi Kondisional Legal
+  // Navigasi Legal
   if (currentPage === 'terms') {
     return <TermsConditions onNavigate={navigateTo} />;
   }
@@ -163,12 +161,12 @@ export default function App() {
     return <PrivacyPolicy onNavigate={navigateTo} />;
   }
 
-  // Navigasi Kondisional Auth (Login, Register, Forgot Password)
+  // Navigasi Auth
   if (currentPage === 'login' || currentPage === 'register' || currentPage === 'forgot') {
     return <AuthPages initialView={currentPage} onNavigate={navigateTo} />;
   }
 
-  // Navigasi Khusus Sesuai Role
+  // Navigasi Dashboard Role
   if (currentPage === 'user') return <UserDashboard user={currentUser} onLogout={handleLogout} />;
   if (currentPage === 'mentor') return <MentorDashboard user={currentUser} onLogout={handleLogout} />;
   if (currentPage === 'admin') return <AdminDashboard user={currentUser} onLogout={handleLogout} />;
@@ -231,7 +229,7 @@ export default function App() {
           </div>
         </div>
 
-        {/* Mobile Menu Dropdown */}
+        {/* Mobile Menu */}
         {mobileMenuOpen && (
           <div className="md:hidden border-b border-slate-800 bg-[#0c121e] px-4 pt-2 pb-6 space-y-3">
             <a href="#program" onClick={() => setMobileMenuOpen(false)} className="block py-2 text-slate-300 font-medium">Program</a>
@@ -303,7 +301,7 @@ export default function App() {
         </div>
       </div>
 
-      {/* How it Works / 4 Steps */}
+      {/* How it Works */}
       <section id="program" className="py-16 px-4 max-w-5xl mx-auto border-t border-slate-800/60">
         <div className="text-center mb-12">
           <div className="text-xs font-bold text-emerald-400 tracking-wider uppercase mb-2">The Affiliate Program[span_12](start_span)[span_12](end_span)</div>
