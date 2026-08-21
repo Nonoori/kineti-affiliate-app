@@ -1,11 +1,9 @@
-
 import React, { useState } from 'react';
 import TermsConditions from './TermsConditions';
 import PrivacyPolicy from './PrivacyPolicy';
 import { 
   TrendingUp, Menu, X, ChevronRight, CheckCircle2, 
-  HelpCircle, ArrowRight, ShieldCheck, MessageCircle, 
-  Send, Mail, Star 
+  ArrowRight, MessageCircle, Send, Mail, Star 
 } from 'lucide-react';
 
 const productsData = [
@@ -116,16 +114,16 @@ const faqs = [
 ];
 
 export default function App() {
+  const [currentPage, setCurrentPage] = useState('home');
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [activeTab, setActiveTab] = useState('All');
+  const [openFaq, setOpenFaq] = useState(0);
 
-
-      {/* Term */}
-
-const [currentPage, setCurrentPage] = useState('home'); // 'home' | 'terms' | 'privacy'
-const navigateTo = (page) => {
+  const navigateTo = (page) => {
     window.scrollTo({ top: 0, behavior: 'instant' });
     setCurrentPage(page);
   };
-  // Render halaman biasa (bukan pop-up / modal)
+
   if (currentPage === 'terms') {
     return <TermsConditions onNavigate={navigateTo} />;
   }
@@ -133,13 +131,6 @@ const navigateTo = (page) => {
   if (currentPage === 'privacy') {
     return <PrivacyPolicy onNavigate={navigateTo} />;
   }
-      {/* term */}
-
-
-
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [activeTab, setActiveTab] = useState('All');
-  const [openFaq, setOpenFaq] = useState(0);
 
   const filteredProducts = activeTab === 'All' 
     ? productsData 
@@ -189,7 +180,6 @@ const navigateTo = (page) => {
           </div>
         </div>
 
-        {/* Mobile Menu Dropdown */}
         {mobileMenuOpen && (
           <div className="md:hidden border-b border-slate-800 bg-[#0c121e] px-4 pt-2 pb-6 space-y-3">
             <a href="#program" onClick={() => setMobileMenuOpen(false)} className="block py-2 text-slate-300 font-medium">Program</a>
@@ -222,9 +212,9 @@ const navigateTo = (page) => {
           <button className="w-full sm:w-auto px-7 py-3.5 rounded-xl bg-slate-900 border border-slate-700 hover:bg-slate-800 text-white font-semibold flex items-center justify-center gap-2">
             Start Earning Today <ArrowRight className="w-4 h-4" />
           </button>
-          <button className="w-full sm:w-auto px-7 py-3.5 rounded-xl border border-slate-800 bg-slate-900/30 hover:bg-slate-800/60 text-slate-300 font-semibold">
+          <a href="#program" className="w-full sm:w-auto px-7 py-3.5 rounded-xl border border-slate-800 bg-slate-900/30 hover:bg-slate-800/60 text-slate-300 font-semibold text-center">
             How It Works
-          </button>
+          </a>
         </div>
 
         <div className="mt-10 flex flex-wrap justify-center items-center gap-6 text-xs text-slate-400">
@@ -281,7 +271,6 @@ const navigateTo = (page) => {
           <h2 className="text-3xl font-bold text-white">Curated products ready for your affiliate links</h2>
         </div>
 
-        {/* Filters */}
         <div className="flex justify-center gap-2 mb-10">
           {['All', 'Shopee', 'Tiktok'].map((tab) => (
             <button
@@ -298,7 +287,6 @@ const navigateTo = (page) => {
           ))}
         </div>
 
-        {/* Grid */}
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {filteredProducts.map((p) => (
             <div key={p.id} className="p-5 rounded-2xl bg-[#0f172a]/70 border border-slate-800 flex flex-col justify-between hover:border-slate-700 transition">
@@ -477,41 +465,29 @@ const navigateTo = (page) => {
                 <li><a href="#" className="hover:text-white">Sign up</a></li>
               </ul>
             </div>
-            
-
-
-
-
-
-      {/* Bagian Link Footer */}
-        <div>
-          <div className="font-bold text-white mb-2">Legal</div>
-          <ul className="space-y-1 text-slate-400">
-            <li>
-              <button 
-                onClick={() => navigateTo('terms')} 
-                className="hover:text-white text-left transition"
-              >
-                Terms &amp; Conditions
-              </button>
-            </li>
-            <li>
-              <button 
-                onClick={() => navigateTo('privacy')} 
-                className="hover:text-white text-left transition"
-              >
-                Privacy Policy
-              </button>
-            </li>
-          </ul>
-        </div>
-      {/* Bagian Link Footer */}
-
-
-
-
-
-            
+            <div>
+              <div className="font-bold text-white mb-2">Legal</div>
+              <ul className="space-y-1 text-slate-400">
+                <li>
+                  <button 
+                    type="button"
+                    onClick={() => navigateTo('terms')} 
+                    className="hover:text-white text-left transition"
+                  >
+                    Terms &amp; Conditions
+                  </button>
+                </li>
+                <li>
+                  <button 
+                    type="button"
+                    onClick={() => navigateTo('privacy')} 
+                    className="hover:text-white text-left transition"
+                  >
+                    Privacy Policy
+                  </button>
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
 
