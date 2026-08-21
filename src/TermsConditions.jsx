@@ -1,77 +1,97 @@
 import React from 'react';
-import { ShieldAlert, FileText, CheckCircle2, ArrowLeft } from 'lucide-react';
+import { TrendingUp, FileText, ArrowLeft } from 'lucide-react';
 
-export default function TermsConditions({ onBack }) {
+export default function TermsConditions({ onNavigate }) {
   return (
-    <div className="min-h-screen bg-[#070b14] text-slate-300 py-12 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-4xl mx-auto">
-        <button
-          onClick={onBack}
-          className="inline-flex items-center gap-2 text-sm font-semibold text-emerald-400 hover:text-emerald-300 mb-8 transition"
-        >
-          <ArrowLeft className="w-4 h-4" /> Kembali ke Beranda
-        </button>
-
-        <div className="bg-[#0f172a]/80 border border-slate-800 rounded-3xl p-6 sm:p-10 backdrop-blur-md">
-          <div className="flex items-center gap-3 mb-6 pb-6 border-b border-slate-800">
-            <div className="p-3 bg-emerald-950/60 border border-emerald-500/20 rounded-xl text-emerald-400">
-              <FileText className="w-6 h-6" />
+    <div className="min-h-screen bg-[#070b14] text-slate-200 flex flex-col justify-between">
+      {/* Header / Navbar */}
+      <header className="sticky top-0 z-50 bg-[#070b14]/90 backdrop-blur-md border-b border-slate-800">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+          <div 
+            onClick={() => onNavigate('home')} 
+            className="flex items-center gap-2 cursor-pointer"
+          >
+            <div className="bg-[#0f1d2e] p-2 rounded-xl border border-emerald-500/20 text-emerald-400">
+              <TrendingUp className="w-5 h-5" />
             </div>
-            <div>
-              <h1 className="text-2xl sm:text-3xl font-extrabold text-white">Syarat &amp; Ketentuan</h1>
-              <p className="text-xs text-slate-400 mt-1">Terakhir diperbarui: 21 Agustus 2026</p>
-            </div>
+            <span className="text-xl font-bold tracking-tight text-white">
+              Kineti<span className="text-emerald-400">Affiliate</span>
+            </span>
           </div>
 
-          <div className="space-y-6 text-sm leading-relaxed text-slate-300">
-            <section>
-              <h2 className="text-base font-bold text-white mb-2">1. Ketentuan Akun &amp; Pendaftaran</h2>
-              <ul className="list-disc list-inside space-y-1.5 text-slate-400">
-                <li>Pengguna wajib mengisi data valid (Nama Lengkap, Nomor WhatsApp, Email, Akun Telegram, dan Informasi Rekening Bank).</li>
-                <li>Verifikasi akun dilakukan melalui kode OTP yang dikirimkan ke alamat email terdaftar.</li>
-                <li>Setiap pengguna hanya diperkenankan memiliki satu akun aktif. Akun ganda dapat dinonaktifkan secara permanen.</li>
-              </ul>
-            </section>
+          <button
+            onClick={() => onNavigate('home')}
+            className="inline-flex items-center gap-2 text-sm font-semibold text-slate-300 hover:text-emerald-400 transition"
+          >
+            <ArrowLeft className="w-4 h-4" /> Kembali ke Beranda
+          </button>
+        </div>
+      </header>
 
-            <section>
-              <h2 className="text-base font-bold text-white mb-2">2. Biaya Pelatihan (Training Fee)</h2>
-              <p className="text-slate-400 mb-2">
-                Biaya pelatihan sebesar <strong>Rp100.000 (IDR)</strong> merupakan pembayaran satu kali (one-time fee) untuk membuka akses penuh ke arsip materi, template promosi, dan pendampingan Customer Support / Mentor.
-              </p>
-              <ul className="list-disc list-inside space-y-1 text-slate-400">
-                <li>Biaya pelatihan bersifat <em>non-refundable</em> (tidak dapat dikembalikan) setelah akses materi dan modul berhasil diaktifkan.</li>
-                <li>Pembayaran biaya pelatihan memberi lisensi akses seumur hidup (lifetime access) selama platform beroperasi.</li>
-              </ul>
-            </section>
+      {/* Main Content */}
+      <main className="max-w-4xl mx-auto px-4 py-12 w-full flex-grow">
+        <div className="mb-10 pb-6 border-b border-slate-800">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-950/60 border border-emerald-500/30 text-emerald-400 text-xs font-semibold uppercase tracking-wider mb-4">
+            <FileText className="w-3.5 h-3.5" /> Dokumen Legal
+          </div>
+          <h1 className="text-3xl sm:text-4xl font-extrabold text-white">Syarat &amp; Ketentuan</h1>
+          <p className="text-sm text-slate-400 mt-2">Terakhir diperbarui: 21 Agustus 2026</p>
+        </div>
 
-            <section>
-              <h2 className="text-base font-bold text-white mb-2">3. Distribusi Tautan Afiliasi &amp; Konten Promosi</h2>
-              <ul className="list-disc list-inside space-y-1.5 text-slate-400">
-                <li>Afiliator diperbolehkan membagikan link afiliasi Shopee &amp; TikTok yang disediakan melalui media sosial pribadi (Instagram, TikTok, WhatsApp Story, Telegram, dll.).</li>
-                <li>Dilarang keras menyebarkan link dengan metode spam, penipuan (clickbait palsu), bot otomatis ilegal, atau pelanggaran hak cipta pihak ketiga.</li>
-              </ul>
-            </section>
+        <div className="space-y-8 text-sm leading-relaxed text-slate-300">
+          <section className="space-y-2">
+            <h2 className="text-lg font-bold text-white">1. Ketentuan Akun &amp; Pendaftaran</h2>
+            <p className="text-slate-400">
+              Pengguna wajib memberikan data yang sah dan akurat, mencakup Nama Lengkap, Nomor WhatsApp, Alamat Email, Akun Telegram, serta Data Rekening Bank untuk pencairan komisi. Verifikasi akun dilakukan melalui sistem OTP yang dikirimkan ke email terdaftar.
+            </p>
+            <p className="text-slate-400">
+              Satu identitas pengguna hanya diizinkan mengelola satu akun KinetiAffiliate. Segala bentuk duplikasi akun berpotensi mengakibatkan penangguhan permanen.
+            </p>
+          </section>
 
-            <section>
-              <h2 className="text-base font-bold text-white mb-2">4. Validasi Komisi &amp; Pembayaran (Payouts)</h2>
-              <p className="text-slate-400 mb-2">
-                Setiap komisi penjualan tercatat dengan tahapan status: <strong>Pending</strong>, <strong>Valid</strong>, <strong>Approved</strong>, atau <strong>Canceled</strong>.
-              </p>
-              <ul className="list-disc list-inside space-y-1.5 text-slate-400">
-                <li>Komisi hanya disetujui (*Approved*) jika pesanan berhasil diselesaikan oleh pembeli tanpa adanya retur/pembatalan di platform e-commerce terkait.</li>
-                <li>Penarikan dana diproses ke rekening bank lokal yang telah didaftarkan dan diverifikasi oleh tim verifikasi admin.</li>
-              </ul>
-            </section>
+          <section className="space-y-2">
+            <h2 className="text-lg font-bold text-white">2. Biaya Pelatihan (Training Fee)</h2>
+            <p className="text-slate-400">
+              Pembayaran biaya pelatihan sebesar <strong>Rp100.000 (IDR)</strong> merupakan pembayaran satu kali (<em>one-time fee</em>) yang membuka akses ke materi kurasi, panduan setup platform TikTok Shop &amp; Shopee Affiliate, materi promosi, dan sesi mentoring CS.
+            </p>
+            <p className="text-slate-400">
+              Biaya pelatihan tidak dapat dikembalikan (<em>non-refundable</em>) setelah hak akses akun dan modul pelatihan berhasil diaktifkan.
+            </p>
+          </section>
 
-            <section>
-              <h2 className="text-base font-bold text-white mb-2">5. Penghentian Layanan</h2>
-              <p className="text-slate-400">
-                KinetiAffiliate berhak menangguhkan atau menghapus akses akun secara sepihak jika ditemukan indikasi manipulasi transaksi, transaksi palsu, atau pelanggaran hukum yang berlaku di Indonesia.
-              </p>
-            </section>
+          <section className="space-y-2">
+            <h2 className="text-lg font-bold text-white">3. Tautan Afiliasi &amp; Praktik Promosi</h2>
+            <p className="text-slate-400">
+              Mitra afiliasi berhak menyebarkan tautan produk unik yang dihasilkan melalui dashboard platform. Promosi wajib mematuhi standar etika periklanan digital tanpa mengandung unsur manipulasi, pemalsuan identitas, maupun spamming otomatis.
+            </p>
+          </section>
+
+          <section className="space-y-2">
+            <h2 className="text-lg font-bold text-white">4. Validasi Komisi &amp; Pembayaran (Payouts)</h2>
+            <p className="text-slate-400">
+              Komisi dicatat secara bertahap melalui status <em>Pending</em>, <em>Valid</em>, dan <em>Approved</em>. Komisi hanya akan disetujui untuk penarikan dana setelah transaksi produk dinyatakan selesai tanpa retur atau pembatalan di platform marketplace terkait.
+            </p>
+          </section>
+
+          <section className="space-y-2">
+            <h2 className="text-lg font-bold text-white">5. Pembatasan Tanggung Jawab</h2>
+            <p className="text-slate-400">
+              KinetiAffiliate berhak membatalkan saldo komisi atau menonaktifkan akun mitra secara sepihak jika ditemukan pelanggaran terhadap ketentuan ini atau indikasi tindakan penipuan transaksi.
+            </p>
+          </section>
+        </div>
+      </main>
+
+      {/* Footer */}
+      <footer className="border-t border-slate-800 bg-[#05080f] py-8 px-4 text-xs text-slate-500 text-center">
+        <div className="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-4">
+          <div>© 2026 KinetiAffiliate. All rights reserved.</div>
+          <div className="flex gap-6 text-slate-400">
+            <button onClick={() => { window.scrollTo(0,0); onNavigate('privacy'); }} className="hover:text-white">Privacy Policy</button>
+            <button onClick={() => { window.scrollTo(0,0); onNavigate('home'); }} className="hover:text-white">Beranda</button>
           </div>
         </div>
-      </div>
+      </footer>
     </div>
   );
 }

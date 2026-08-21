@@ -481,21 +481,10 @@ const [currentPage, setCurrentPage] = useState('home'); // 'home' | 'terms' | 'p
 
       {/* Bagian Link Footer */}
       <ul className="space-y-1">
-        <li>
-          <button 
-            onClick={() => { window.scrollTo({ top: 0, behavior: 'smooth' }); setCurrentPage('terms'); }} 
-            className="hover:text-white text-left"
-          >
-            Terms &amp; Conditions
-          </button>
+        
+          <li><a href="TermsConditions.jsx" className="hover:text-white">Terms & Conditions</a>
         </li>
-        <li>
-          <button 
-            onClick={() => { window.scrollTo({ top: 0, behavior: 'smooth' }); setCurrentPage('privacy'); }} 
-            className="hover:text-white text-left"
-          >
-            Privacy Policy
-          </button>
+        <li><a href="PrivacyPolicy.jsx" className="hover:text-white">Privacy Policy</a>
         </li>
       </ul>
       {/* Bagian Link Footer */}
