@@ -179,7 +179,7 @@ export default function UserDashboard({ user, onLogout }) {
                 <Sparkles className="w-5 h-5" />
               </div>
               <div>
-                <h2 className="font-extrabold text-white text-base leading-tight">Mitra Berkah</h2>
+                <h2 className="font-extrabold text-white text-base leading-tight">Kineti-Affiliate </h2>
                 <span className="text-[10px] text-slate-400">KinetiAffiliate Platform</span>
               </div>
             </div>
@@ -319,10 +319,10 @@ export default function UserDashboard({ user, onLogout }) {
 
                 <div className="flex items-center gap-2 bg-[#070b14] p-3 rounded-2xl border border-slate-800 text-xs text-slate-300 overflow-x-auto">
                   <span className="font-mono flex-1 truncate">
-                    https://mitra-berkah-affiliate.vercel.app/?ref={profileData.affiliateId || 'KNT-MTR77'}
+                    https://kineti-affiliate-app-nu.vercel.app/?ref={profileData.affiliateId || 'KNT-MTR77'}
                   </span>
                   <button 
-                    onClick={() => copyText(`https://mitra-berkah-affiliate.vercel.app/?ref=${profileData.affiliateId || 'KNT-MTR77'}`, 'link')}
+                    onClick={() => copyText(`https://kineti-affiliate-app-nu.vercel.app/?ref=${profileData.affiliateId || 'KNT-MTR77'}`, 'link')}
                     className="px-4 py-2 rounded-xl bg-emerald-500 text-slate-950 font-bold flex items-center gap-1.5 hover:bg-emerald-400 flex-shrink-0 transition"
                   >
                     {copiedLink ? <Check className="w-3.5 h-3.5" /> : <Copy className="w-3.5 h-3.5" />}
@@ -396,7 +396,7 @@ export default function UserDashboard({ user, onLogout }) {
                     </p>
                   </div>
                   <a 
-                    href="https://wa.me/6281234567890?text=Halo%20Admin%20Mitra%20Berkah,%20saya%20butuh%20bantuan%20mengenai%20akun%20afiliasi"
+                    href="https://wa.me/6281234567890?text=Halo%20Admin%20Kineti-Affiliate,%20saya%20butuh%20bantuan%20mengenai%20akun%20afiliasi"
                     target="_blank" 
                     rel="noreferrer"
                     className="w-full py-3 bg-emerald-600 hover:bg-emerald-500 text-white font-bold rounded-xl text-xs flex items-center justify-center gap-2 transition shadow-lg"
@@ -442,7 +442,7 @@ export default function UserDashboard({ user, onLogout }) {
                     </div>
 
                     <button 
-                      onClick={() => copyText(`https://mitra-berkah-affiliate.vercel.app/p/${p.id}?ref=${profileData.affiliateId || 'KNT-MTR77'}`, 'link')}
+                      onClick={() => copyText(`https://kineti-affiliate-app-nu.vercel.app/p/${p.id}?ref=${profileData.affiliateId || 'KNT-MTR77'}`, 'link')}
                       className="mt-4 w-full py-2 bg-emerald-500/10 hover:bg-emerald-500/20 border border-emerald-500/30 text-emerald-400 font-bold rounded-xl text-xs flex items-center justify-center gap-1.5 transition"
                     >
                       <Copy className="w-3.5 h-3.5" /> Salin Link Promosi
