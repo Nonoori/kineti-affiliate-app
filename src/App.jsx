@@ -146,6 +146,27 @@ export default function App() {
     setCurrentPage(page);
   };
 
+  // Tambahkan fungsi ini di dalam function App()
+  const handleLoginSuccess = (userData) => {
+    setCurrentUser(userData);
+    setCurrentPage(userData.role || 'user');
+    window.scrollTo({ top: 0, behavior: 'instant' });
+  };
+
+  // Ubah bagian render AuthPages menjadi seperti ini:
+  if (currentPage === 'login' || currentPage === 'register' || currentPage === 'forgot') {
+    return (
+      <AuthPages 
+        initialView={currentPage} 
+        onNavigate={navigateTo} 
+        onLoginSuccess={handleLoginSuccess} 
+      />
+    );
+  }
+
+
+
+
   const handleLogout = () => {
     localStorage.removeItem('currentUser');
     setCurrentUser(null);

@@ -17,7 +17,12 @@ const generateAffiliateId = () => {
   return result;
 };
 
-export default function AuthPages({ initialView = 'login', onNavigate }) {
+
+export default function AuthPages({ initialView = 'login', onNavigate, onLoginSuccess })
+
+
+
+ {
   const [view, setView] = useState(initialView); // 'login' | 'register' | 'forgot'
   const [loading, setLoading] = useState(false);
   const [errorMsg, setErrorMsg] = useState('');
@@ -145,26 +150,38 @@ export default function AuthPages({ initialView = 'login', onNavigate }) {
         return;
       }
 
-      // Cek Kesesuaian Role
-      if (userData.role !== loginForm.role) {
-        setErrorMsg(`Akun ini tidak memiliki hak akses sebagai [${loginForm.role.toUpperCase()}]. Role akun terdaftar: [${userData.role ? userData.role.toUpperCase() : 'USER'}].`);
+          // Validasi Kesesuaian Role
+      const userRole = userData.role || 'user';
+      if (userRole !== loginForm.role) {
+        setErrorMsg(`Akun ini tidak memiliki hak akses sebagai [${loginForm.role.toUpperCase()}]. Role akun Anda: [${userRole.toUpperCase()}].`);
         setLoading(false);
         return;
       }
 
-      // Simpan session sederhana
-      localStorage.setItem('currentUser', JSON.stringify({
+      const sessionData = {
         whatsapp: userData.whatsapp,
         name: userData.fullName,
-        role: userData.role,
+        role: userRole,
         affiliateId: userData.affiliateId,
-        saldo: userData.saldo
-      }));
+        saldo: userData.saldo || 0,
+        trainingFeePaid: userData.trainingFeePaid || false
+      };
+
+
+       // Simpan session ke localStorage
+      localStorage.setItem('currentUser', JSON.stringify(sessionData));
 
       setSuccessMsg(`Login berhasil sebagai ${loginForm.role.toUpperCase()}! Mengalihkan...`);
+      
+      // Arahkan LANGSUNG ke dashboard role yang sesuai
       setTimeout(() => {
-        onNavigate('home');
-      }, 1200);
+        if (onLoginSuccess) {
+          onLoginSuccess(sessionData);
+        } else {
+          onNavigate(userRole);
+        }
+      }, 1000);
+
     } catch (err) {
       setErrorMsg('Gagal masuk: ' + err.message);
     } finally {
