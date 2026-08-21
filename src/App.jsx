@@ -482,9 +482,9 @@ const [currentPage, setCurrentPage] = useState('home'); // 'home' | 'terms' | 'p
       {/* Bagian Link Footer */}
       <ul className="space-y-1">
         
-          <li><a href="TermsConditions.jsx" className="hover:text-white">Terms & Conditions</a>
+          <li><a href="src/TermsConditions.jsx" className="hover:text-white">Terms & Conditions</a>
         </li>
-        <li><a href="PrivacyPolicy.jsx" className="hover:text-white">Privacy Policy</a>
+        <li><a href="src/PrivacyPolicy.jsx" className="hover:text-white">Privacy Policy</a>
         </li>
       </ul>
       {/* Bagian Link Footer */}
