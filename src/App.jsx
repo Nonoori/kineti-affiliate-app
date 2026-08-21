@@ -260,30 +260,30 @@ export default function App() {
       <section className="pt-16 pb-14 px-4 text-center max-w-4xl mx-auto">
         <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-950/60 border border-emerald-500/30 text-emerald-400 text-xs font-semibold uppercase tracking-wider mb-6">
           <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
-          Live Commission Payouts[span_0](start_span)[span_0](end_span)
+          Live Commission Payouts 
         </div>
         <h1 className="text-4xl sm:text-6xl font-extrabold tracking-tight text-white leading-tight">
-          Turn Shopee &amp; TikTok products into a <span className="text-emerald-400">high-performance</span> career.[span_1](start_span)[span_1](end_span)
+          Turn Shopee &amp; TikTok products into a <span className="text-emerald-400">high-performance</span> career. 
         </h1>
         <p className="mt-6 text-base sm:text-lg text-slate-400 max-w-2xl mx-auto leading-relaxed">
-          Join the affiliate program built for the next generation of digital entrepreneurs. Grab unique links, track every commission in real time, and build your digital legacy — one transaction at a time.[span_2](start_span)[span_2](end_span)
+          Join the affiliate program built for the next generation of digital entrepreneurs. Grab unique links, track every commission in real time, and build your digital legacy — one transaction at a time. 
         </p>
         <div className="mt-8 flex flex-col sm:flex-row gap-3 justify-center items-center">
           <button 
             onClick={() => navigateTo('register')}
             className="w-full sm:w-auto px-7 py-3.5 rounded-xl bg-slate-900 border border-slate-700 hover:bg-slate-800 text-white font-semibold flex items-center justify-center gap-2"
           >
-            Start Earning Today <ArrowRight className="w-4 h-4" />[span_3](start_span)[span_3](end_span)
+            Start Earning Today <ArrowRight className="w-4 h-4" /> 
           </button>
           <a href="#program" className="w-full sm:w-auto px-7 py-3.5 rounded-xl border border-slate-800 bg-slate-900/30 hover:bg-slate-800/60 text-slate-300 font-semibold text-center">
-            How It Works[span_4](start_span)[span_4](end_span)
+            How It Works 
           </a>
         </div>
 
         <div className="mt-10 flex flex-wrap justify-center items-center gap-6 text-xs text-slate-400">
-          <span className="flex items-center gap-1.5"><CheckCircle2 className="w-4 h-4 text-emerald-400"/> Shopee Affiliate[span_5](start_span)[span_5](end_span)</span>
-          <span className="flex items-center gap-1.5"><CheckCircle2 className="w-4 h-4 text-emerald-400"/> TikTok Shop[span_6](start_span)[span_6](end_span)</span>
-          <span className="flex items-center gap-1.5"><CheckCircle2 className="w-4 h-4 text-emerald-400"/> 100k IDR Training[span_7](start_span)[span_7](end_span)</span>
+          <span className="flex items-center gap-1.5"><CheckCircle2 className="w-4 h-4 text-emerald-400"/> Shopee Affiliate </span>
+          <span className="flex items-center gap-1.5"><CheckCircle2 className="w-4 h-4 text-emerald-400"/> TikTok Shop </span>
+          <span className="flex items-center gap-1.5"><CheckCircle2 className="w-4 h-4 text-emerald-400"/> 100k IDR Training </span>
         </div>
       </section>
 
@@ -291,12 +291,12 @@ export default function App() {
       <div className="max-w-md mx-auto px-4 mb-20">
         <div className="p-4 rounded-2xl bg-[#0f172a]/90 border border-slate-800 shadow-xl flex items-center justify-between">
           <div>
-            <div className="text-[10px] tracking-wider font-bold text-slate-400 uppercase">Commission Ticker[span_8](start_span)[span_8](end_span)</div>
-            <div className="text-sm font-semibold text-white mt-0.5">Latest payout to <span className="text-emerald-400">Rizky P.[span_9](start_span)[span_9](end_span)</span></div>
+            <div className="text-[10px] tracking-wider font-bold text-slate-400 uppercase">Commission Ticker </div>
+            <div className="text-sm font-semibold text-white mt-0.5">Latest payout to <span className="text-emerald-400">Rizky P. </span></div>
           </div>
           <div className="text-right">
-            <div className="text-[10px] text-slate-400">Tiktok[span_10](start_span)[span_10](end_span)</div>
-            <div className="text-sm font-extrabold text-emerald-400">+Rp120.000[span_11](start_span)[span_11](end_span)</div>
+            <div className="text-[10px] text-slate-400">Tiktok </div>
+            <div className="text-sm font-extrabold text-emerald-400">+Rp120.000 </div>
           </div>
         </div>
       </div>
@@ -304,10 +304,10 @@ export default function App() {
       {/* How it Works */}
       <section id="program" className="py-16 px-4 max-w-5xl mx-auto border-t border-slate-800/60">
         <div className="text-center mb-12">
-          <div className="text-xs font-bold text-emerald-400 tracking-wider uppercase mb-2">The Affiliate Program[span_12](start_span)[span_12](end_span)</div>
-          <h2 className="text-3xl font-bold text-white">A precision instrument for wealth creation[span_13](start_span)[span_13](end_span)</h2>
+          <div className="text-xs font-bold text-emerald-400 tracking-wider uppercase mb-2">The Affiliate Program </div>
+          <h2 className="text-3xl font-bold text-white">A precision instrument for wealth creation </h2>
           <p className="text-sm text-slate-400 mt-2 max-w-xl mx-auto">
-            We've transformed affiliate marketing from a side hustle into a structured, transparent career path.[span_14](start_span)[span_14](end_span)
+            We've transformed affiliate marketing from a side hustle into a structured, transparent career path. 
           </p>
         </div>
 
@@ -319,9 +319,9 @@ export default function App() {
             { num: "04", title: "Withdraw Your Earnings", desc: "Request a direct withdrawal to your bank account with complete transparency and audit logs." },
           ].map((step, idx) => (
             <div key={idx} className="p-6 rounded-2xl bg-[#0f172a]/40 border border-slate-800 relative">
-              <span className="text-3xl font-extrabold text-slate-800 absolute top-4 right-5">{step.num}[span_15](start_span)[span_15](end_span)</span>
-              <h3 className="text-lg font-bold text-white mb-2">{step.title}[span_16](start_span)[span_16](end_span)</h3>
-              <p className="text-sm text-slate-400 leading-relaxed">{step.desc}[span_17](start_span)[span_17](end_span)</p>
+              <span className="text-3xl font-extrabold text-slate-800 absolute top-4 right-5">{step.num} </span>
+              <h3 className="text-lg font-bold text-white mb-2">{step.title} </h3>
+              <p className="text-sm text-slate-400 leading-relaxed">{step.desc} </p>
             </div>
           ))}
         </div>
@@ -330,8 +330,8 @@ export default function App() {
       {/* Product Gallery */}
       <section id="products" className="py-16 px-4 max-w-6xl mx-auto border-t border-slate-800/60">
         <div className="text-center mb-8">
-          <div className="text-xs font-bold text-emerald-400 tracking-wider uppercase mb-2">Product Gallery[span_18](start_span)[span_18](end_span)</div>
-          <h2 className="text-3xl font-bold text-white">Curated products ready for your affiliate links[span_19](start_span)[span_19](end_span)</h2>
+          <div className="text-xs font-bold text-emerald-400 tracking-wider uppercase mb-2">Product Gallery </div>
+          <h2 className="text-3xl font-bold text-white">Curated products ready for your affiliate links </h2>
         </div>
 
         <div className="flex justify-center gap-2 mb-10">
@@ -345,7 +345,7 @@ export default function App() {
                   : 'border-slate-800 bg-[#0f172a] text-slate-400 hover:text-white'
               }`}
             >
-              {tab}[span_20](start_span)[span_20](end_span)
+              {tab} 
             </button>
           ))}
         </div>
@@ -355,21 +355,21 @@ export default function App() {
             <div key={p.id} className="p-5 rounded-2xl bg-[#0f172a]/70 border border-slate-800 flex flex-col justify-between hover:border-slate-700 transition">
               <div>
                 <div className="flex items-center justify-between mb-3">
-                  <span className="text-[11px] font-bold px-2 py-0.5 rounded bg-slate-800 text-slate-300 uppercase">{p.category}[span_21](start_span)[span_21](end_span)</span>
-                  <span className="text-xs font-bold text-emerald-400">{p.platform} • {p.rate} commission[span_22](start_span)[span_22](end_span)</span>
+                  <span className="text-[11px] font-bold px-2 py-0.5 rounded bg-slate-800 text-slate-300 uppercase">{p.category} </span>
+                  <span className="text-xs font-bold text-emerald-400">{p.platform} • {p.rate} commission </span>
                 </div>
-                <h4 className="text-base font-bold text-white mb-1">{p.title}[span_23](start_span)[span_23](end_span)</h4>
-                <p className="text-xs text-slate-400 mb-6">{p.desc}[span_24](start_span)[span_24](end_span)</p>
+                <h4 className="text-base font-bold text-white mb-1">{p.title} </h4>
+                <p className="text-xs text-slate-400 mb-6">{p.desc} </p>
               </div>
 
               <div className="pt-4 border-t border-slate-800/70 flex items-center justify-between text-sm">
                 <div>
-                  <div className="text-[10px] text-slate-400">Price[span_25](start_span)[span_25](end_span)</div>
-                  <div className="font-semibold text-slate-200">{formatRupiah(p.price)}[span_26](start_span)[span_26](end_span)</div>
+                  <div className="text-[10px] text-slate-400">Price </div>
+                  <div className="font-semibold text-slate-200">{formatRupiah(p.price)} </div>
                 </div>
                 <div className="text-right">
-                  <div className="text-[10px] text-emerald-400 font-semibold">You earn[span_27](start_span)[span_27](end_span)</div>
-                  <div className="font-bold text-emerald-400">{formatRupiah(p.earn)}[span_28](start_span)[span_28](end_span)</div>
+                  <div className="text-[10px] text-emerald-400 font-semibold">You earn </div>
+                  <div className="font-bold text-emerald-400">{formatRupiah(p.earn)} </div>
                 </div>
               </div>
             </div>
@@ -381,26 +381,26 @@ export default function App() {
       <section id="training" className="py-16 px-4 max-w-4xl mx-auto border-t border-slate-800/60">
         <div className="p-8 sm:p-10 rounded-3xl bg-gradient-to-b from-[#0f172a] to-[#0a0f1c] border border-emerald-500/20">
           <div className="text-center max-w-2xl mx-auto mb-8">
-            <div className="text-xs font-bold text-emerald-400 uppercase tracking-widest mb-2">The Training Fee[span_29](start_span)[span_29](end_span)</div>
-            <h2 className="text-2xl sm:text-3xl font-extrabold text-white">Unlock the premium archive for 100.000 IDR[span_30](start_span)[span_30](end_span)</h2>
+            <div className="text-xs font-bold text-emerald-400 uppercase tracking-widest mb-2">The Training Fee </div>
+            <h2 className="text-2xl sm:text-3xl font-extrabold text-white">Unlock the premium archive for 100.000 IDR </h2>
             <p className="text-sm text-slate-400 mt-2">
-              A one-time training fee of 100,000 IDR unlocks the full affiliate training program.[span_31](start_span)[span_31](end_span)
+              A one-time training fee of 100,000 IDR unlocks the full affiliate training program. 
             </p>
           </div>
 
           <div className="grid sm:grid-cols-2 gap-4 text-sm text-slate-300 mb-8">
-            <div className="flex items-center gap-2"><CheckCircle2 className="w-4 h-4 text-emerald-400 flex-shrink-0"/> Full access to video training library[span_32](start_span)[span_32](end_span)</div>
-            <div className="flex items-center gap-2"><CheckCircle2 className="w-4 h-4 text-emerald-400 flex-shrink-0"/> Step-by-step setup guides[span_33](start_span)[span_33](end_span)</div>
-            <div className="flex items-center gap-2"><CheckCircle2 className="w-4 h-4 text-emerald-400 flex-shrink-0"/> High-converting templates[span_34](start_span)[span_34](end_span)</div>
-            <div className="flex items-center gap-2"><CheckCircle2 className="w-4 h-4 text-emerald-400 flex-shrink-0"/> Direct CS mentor support sessions[span_35](start_span)[span_35](end_span)</div>
-            <div className="flex items-center gap-2"><CheckCircle2 className="w-4 h-4 text-emerald-400 flex-shrink-0"/> Premium product archives[span_36](start_span)[span_36](end_span)</div>
-            <div className="flex items-center gap-2"><CheckCircle2 className="w-4 h-4 text-emerald-400 flex-shrink-0"/> Lifetime access[span_37](start_span)[span_37](end_span)</div>
+            <div className="flex items-center gap-2"><CheckCircle2 className="w-4 h-4 text-emerald-400 flex-shrink-0"/> Full access to video training library </div>
+            <div className="flex items-center gap-2"><CheckCircle2 className="w-4 h-4 text-emerald-400 flex-shrink-0"/> Step-by-step setup guides </div>
+            <div className="flex items-center gap-2"><CheckCircle2 className="w-4 h-4 text-emerald-400 flex-shrink-0"/> High-converting templates </div>
+            <div className="flex items-center gap-2"><CheckCircle2 className="w-4 h-4 text-emerald-400 flex-shrink-0"/> Direct CS mentor support sessions </div>
+            <div className="flex items-center gap-2"><CheckCircle2 className="w-4 h-4 text-emerald-400 flex-shrink-0"/> Premium product archives </div>
+            <div className="flex items-center gap-2"><CheckCircle2 className="w-4 h-4 text-emerald-400 flex-shrink-0"/> Lifetime access </div>
           </div>
 
           <div className="pt-6 border-t border-slate-800 flex flex-col sm:flex-row items-center justify-between gap-4">
             <div>
-              <div className="text-xs text-slate-400">One-time fee[span_38](start_span)[span_38](end_span)</div>
-              <div className="text-2xl font-extrabold text-emerald-400">Rp100.000[span_39](start_span)[span_39](end_span)</div>
+              <div className="text-xs text-slate-400">One-time fee </div>
+              <div className="text-2xl font-extrabold text-emerald-400">Rp100.000 </div>
             </div>
             <button 
               onClick={() => navigateTo('register')}
@@ -415,8 +415,8 @@ export default function App() {
       {/* Testimonials */}
       <section id="testimonials" className="py-16 px-4 max-w-6xl mx-auto border-t border-slate-800/60">
         <div className="text-center mb-12">
-          <div className="text-xs font-bold text-emerald-400 uppercase tracking-widest mb-2">Testimonials[span_40](start_span)[span_40](end_span)</div>
-          <h2 className="text-3xl font-bold text-white">Real affiliates, real earnings[span_41](start_span)[span_41](end_span)</h2>
+          <div className="text-xs font-bold text-emerald-400 uppercase tracking-widest mb-2">Testimonials </div>
+          <h2 className="text-3xl font-bold text-white">Real affiliates, real earnings </h2>
         </div>
 
         <div className="grid sm:grid-cols-3 gap-6">
@@ -428,15 +428,15 @@ export default function App() {
                     <Star key={i} className="w-4 h-4 fill-amber-400" />
                   ))}
                 </div>
-                <p className="text-xs text-slate-300 leading-relaxed italic mb-6">"{t.quote}[span_42](start_span)"[span_42](end_span)</p>
+                <p className="text-xs text-slate-300 leading-relaxed italic mb-6">"{t.quote}"</p>
               </div>
               <div className="pt-4 border-t border-slate-800 flex items-center justify-between">
                 <div>
-                  <div className="text-sm font-bold text-white">{t.name}[span_43](start_span)[span_43](end_span)</div>
-                  <div className="text-[11px] text-slate-400">{t.role}[span_44](start_span)[span_44](end_span)</div>
+                  <div className="text-sm font-bold text-white">{t.name} </div>
+                  <div className="text-[11px] text-slate-400">{t.role} </div>
                 </div>
                 <div className="text-right font-extrabold text-emerald-400 text-sm">
-                  {t.monthly}[span_45](start_span)[span_45](end_span)
+                  {t.monthly} 
                 </div>
               </div>
             </div>
@@ -447,8 +447,8 @@ export default function App() {
       {/* FAQ */}
       <section id="faq" className="py-16 px-4 max-w-3xl mx-auto border-t border-slate-800/60">
         <div className="text-center mb-10">
-          <div className="text-xs font-bold text-emerald-400 uppercase tracking-widest mb-2">Frequently Asked[span_46](start_span)[span_46](end_span)</div>
-          <h2 className="text-3xl font-bold text-white">Everything you need to know[span_47](start_span)[span_47](end_span)</h2>
+          <div className="text-xs font-bold text-emerald-400 uppercase tracking-widest mb-2">Frequently Asked </div>
+          <h2 className="text-3xl font-bold text-white">Everything you need to know </h2>
         </div>
 
         <div className="space-y-3">
@@ -458,12 +458,12 @@ export default function App() {
                 onClick={() => setOpenFaq(openFaq === index ? -1 : index)}
                 className="w-full p-4 text-left font-semibold text-sm text-white flex justify-between items-center"
               >
-                {faq.q}[span_48](start_span)[span_48](end_span)
+                {faq.q} 
                 <ChevronRight className={`w-4 h-4 text-slate-400 transition-transform ${openFaq === index ? 'rotate-90 text-emerald-400' : ''}`} />
               </button>
               {openFaq === index && (
                 <div className="p-4 pt-0 text-xs text-slate-400 leading-relaxed border-t border-slate-800/50">
-                  {faq.a}[span_49](start_span)[span_49](end_span)
+                  {faq.a} 
                 </div>
               )}
             </div>
@@ -474,30 +474,30 @@ export default function App() {
       {/* Help & Support */}
       <section id="help" className="py-16 px-4 max-w-4xl mx-auto border-t border-slate-800/60">
         <div className="text-center mb-10">
-          <div className="text-xs font-bold text-emerald-400 uppercase tracking-widest mb-2">Help &amp; Support[span_50](start_span)[span_50](end_span)</div>
-          <h2 className="text-3xl font-bold text-white">We're here to help you succeed[span_51](start_span)[span_51](end_span)</h2>
+          <div className="text-xs font-bold text-emerald-400 uppercase tracking-widest mb-2">Help &amp; Support </div>
+          <h2 className="text-3xl font-bold text-white">We're here to help you succeed </h2>
         </div>
 
         <div className="grid sm:grid-cols-3 gap-4">
           <div className="p-5 rounded-2xl bg-[#0f172a]/50 border border-slate-800 text-center">
             <MessageCircle className="w-6 h-6 text-emerald-400 mx-auto mb-2" />
-            <h4 className="font-bold text-sm text-white">WhatsApp[span_52](start_span)[span_52](end_span)</h4>
-            <p className="text-[11px] text-slate-400 mb-2">Fastest response channel[span_53](start_span)[span_53](end_span)</p>
-            <p className="text-xs font-semibold text-emerald-400">+62 812-3456-7890[span_54](start_span)[span_54](end_span)</p>
+            <h4 className="font-bold text-sm text-white">WhatsApp </h4>
+            <p className="text-[11px] text-slate-400 mb-2">Fastest response channel </p>
+            <p className="text-xs font-semibold text-emerald-400">+62 812-3456-7890 </p>
           </div>
 
           <div className="p-5 rounded-2xl bg-[#0f172a]/50 border border-slate-800 text-center">
             <Send className="w-6 h-6 text-emerald-400 mx-auto mb-2" />
-            <h4 className="font-bold text-sm text-white">Telegram[span_55](start_span)[span_55](end_span)</h4>
-            <p className="text-[11px] text-slate-400 mb-2">Community &amp; updates[span_56](start_span)[span_56](end_span)</p>
-            <p className="text-xs font-semibold text-emerald-400">@kinetiaffiliate[span_57](start_span)[span_57](end_span)</p>
+            <h4 className="font-bold text-sm text-white">Telegram </h4>
+            <p className="text-[11px] text-slate-400 mb-2">Community &amp; updates </p>
+            <p className="text-xs font-semibold text-emerald-400">@kinetiaffiliate </p>
           </div>
 
           <div className="p-5 rounded-2xl bg-[#0f172a]/50 border border-slate-800 text-center">
             <Mail className="w-6 h-6 text-emerald-400 mx-auto mb-2" />
-            <h4 className="font-bold text-sm text-white">Email[span_58](start_span)[span_58](end_span)</h4>
-            <p className="text-[11px] text-slate-400 mb-2">Detailed inquiries[span_59](start_span)[span_59](end_span)</p>
-            <p className="text-xs font-semibold text-emerald-400">help@kinetiaffiliate.com[span_60](start_span)[span_60](end_span)</p>
+            <h4 className="font-bold text-sm text-white">Email </h4>
+            <p className="text-[11px] text-slate-400 mb-2">Detailed inquiries </p>
+            <p className="text-xs font-semibold text-emerald-400">help@kinetiaffiliate.com </p>
           </div>
         </div>
       </section>
@@ -508,24 +508,24 @@ export default function App() {
           <div>
             <div className="flex items-center gap-2 mb-3">
               <TrendingUp className="w-5 h-5 text-emerald-400" />
-              <span className="text-base font-bold text-white">Kineti<span className="text-emerald-400">Affiliate[span_61](start_span)[span_61](end_span)</span></span>
+              <span className="text-base font-bold text-white">Kineti<span className="text-emerald-400">Affiliate </span></span>
             </div>
             <p className="max-w-xs text-slate-400">
-              The affiliate platform for the next generation of digital entrepreneurs.[span_62](start_span)[span_62](end_span)
+              The affiliate platform for the next generation of digital entrepreneurs. 
             </p>
           </div>
 
           <div className="grid grid-cols-2 sm:grid-cols-3 gap-6 text-slate-400">
             <div>
-              <div className="font-bold text-white mb-2">Platform[span_63](start_span)[span_63](end_span)</div>
+              <div className="font-bold text-white mb-2">Platform </div>
               <ul className="space-y-1">
-                <li><a href="#program" className="hover:text-white">Program[span_64](start_span)[span_64](end_span)</a></li>
-                <li><a href="#products" className="hover:text-white">Products[span_65](start_span)[span_65](end_span)</a></li>
-                <li><a href="#training" className="hover:text-white">Training[span_66](start_span)[span_66](end_span)</a></li>
+                <li><a href="#program" className="hover:text-white">Program </a></li>
+                <li><a href="#products" className="hover:text-white">Products </a></li>
+                <li><a href="#training" className="hover:text-white">Training </a></li>
               </ul>
             </div>
             <div>
-              <div className="font-bold text-white mb-2">Account[span_67](start_span)[span_67](end_span)</div>
+              <div className="font-bold text-white mb-2">Account </div>
               <ul className="space-y-1">
                 <li>
                   <button 
@@ -533,7 +533,7 @@ export default function App() {
                     onClick={() => navigateTo('login')} 
                     className="hover:text-white text-left transition"
                   >
-                    Log in[span_68](start_span)[span_68](end_span)
+                    Log in 
                   </button>
                 </li>
                 <li>
@@ -542,7 +542,7 @@ export default function App() {
                     onClick={() => navigateTo('register')} 
                     className="hover:text-white text-left transition"
                   >
-                    Sign up[span_69](start_span)[span_69](end_span)
+                    Sign up 
                   </button>
                 </li>
                 <li>
@@ -551,13 +551,13 @@ export default function App() {
                     onClick={() => navigateTo('forgot')} 
                     className="hover:text-white text-left transition"
                   >
-                    Forgot Password[span_70](start_span)[span_70](end_span)
+                    Forgot Password 
                   </button>
                 </li>
               </ul>
             </div>
             <div>
-              <div className="font-bold text-white mb-2">Legal[span_71](start_span)[span_71](end_span)</div>
+              <div className="font-bold text-white mb-2">Legal </div>
               <ul className="space-y-1 text-slate-400">
                 <li>
                   <button 
@@ -565,7 +565,7 @@ export default function App() {
                     onClick={() => navigateTo('terms')} 
                     className="hover:text-white text-left transition"
                   >
-                    Terms &amp; Conditions[span_72](start_span)[span_72](end_span)
+                    Terms &amp; Conditions 
                   </button>
                 </li>
                 <li>
@@ -574,7 +574,7 @@ export default function App() {
                     onClick={() => navigateTo('privacy')} 
                     className="hover:text-white text-left transition"
                   >
-                    Privacy Policy[span_73](start_span)[span_73](end_span)
+                    Privacy Policy 
                   </button>
                 </li>
               </ul>
@@ -583,7 +583,7 @@ export default function App() {
         </div>
 
         <div className="max-w-6xl mx-auto mt-8 pt-6 border-t border-slate-900 text-center text-slate-600">
-          © 2026 KinetiAffiliate. All rights reserved.[span_74](start_span)[span_74](end_span)
+          © 2026 KinetiAffiliate. All rights reserved.
         </div>
       </footer>
     </div>
