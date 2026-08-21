@@ -1,4 +1,7 @@
+
 import React, { useState } from 'react';
+import TermsConditions from './TermsConditions';
+import PrivacyPolicy from './PrivacyPolicy';
 import { 
   TrendingUp, Menu, X, ChevronRight, CheckCircle2, 
   HelpCircle, ArrowRight, ShieldCheck, MessageCircle, 
@@ -113,6 +116,22 @@ const faqs = [
 ];
 
 export default function App() {
+
+
+      {/* Term */}
+const [currentPage, setCurrentPage] = useState('home'); // 'home' | 'terms' | 'privacy'
+
+  if (currentPage === 'terms') {
+    return <TermsConditions onBack={() => setCurrentPage('home')} />;
+  }
+
+  if (currentPage === 'privacy') {
+    return <PrivacyPolicy onBack={() => setCurrentPage('home')} />;
+  }
+      {/* term */}
+
+
+
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [activeTab, setActiveTab] = useState('All');
   const [openFaq, setOpenFaq] = useState(0);
@@ -455,10 +474,36 @@ export default function App() {
             </div>
             <div>
               <div className="font-bold text-white mb-2">Legal</div>
-              <ul className="space-y-1">
-                <li><a href="#" className="hover:text-white">Terms &amp; Conditions</a></li>
-                <li><a href="#" className="hover:text-white">Privacy Policy</a></li>
-              </ul>
+
+
+
+
+
+      {/* Bagian Link Footer */}
+      <ul className="space-y-1">
+        <li>
+          <button 
+            onClick={() => { window.scrollTo({ top: 0, behavior: 'smooth' }); setCurrentPage('terms'); }} 
+            className="hover:text-white text-left"
+          >
+            Terms &amp; Conditions
+          </button>
+        </li>
+        <li>
+          <button 
+            onClick={() => { window.scrollTo({ top: 0, behavior: 'smooth' }); setCurrentPage('privacy'); }} 
+            className="hover:text-white text-left"
+          >
+            Privacy Policy
+          </button>
+        </li>
+      </ul>
+      {/* Bagian Link Footer */}
+
+
+
+
+
             </div>
           </div>
         </div>
