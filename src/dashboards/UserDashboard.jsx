@@ -180,7 +180,7 @@ export default function UserDashboard({ user, onLogout }) {
               </div>
               <div>
                 <h2 className="font-extrabold text-white text-base leading-tight">Kineti-Affiliate </h2>
-                <span className="text-[10px] text-slate-400">KinetiAffiliate Platform</span>
+                <span className="text-[10px] text-slate-400">Kineti-Affiliate Platform</span>
               </div>
             </div>
             <button onClick={() => setSidebarOpen(false)} className="lg:hidden text-slate-400 hover:text-white">
