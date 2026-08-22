@@ -1,20 +1,29 @@
-import React, { useState } from 'react';
-import { 
-  Users, MessageSquare, BookOpen, Clock, 
-  ExternalLink, LogOut, CheckCircle2, Search, Send 
-} from 'lucide-react';
-
-const mockMentees = [
-  { id: 1, name: "Dewi Anggraini", wa: "081298765432", city: "Jakarta", progress: "Modul 4: TikTok Viral", status: "Aktif" },
-  { id: 2, name: "Rizky Pratama", wa: "081344556677", city: "Bandung", progress: "Modul 2: Shopee Affiliate Setup", status: "Butuh Bantuan" },
-  { id: 3, name: "Sari Maharani", wa: "081911223344", city: "Surabaya", progress: "Modul 5: Copywriting Konversi", status: "Aktif" }
-];
+import React, { useState, useEffect } from 'react';
+import { db } from '../firebase';
+import { collection, query, where, onSnapshot } from 'firebase/firestore';
+import { Users, LogOut, Search, Send, MessageSquare } from 'lucide-react';
 
 export default function MentorDashboard({ user, onLogout }) {
   const [searchTerm, setSearchTerm] = useState('');
+  const [mentees, setMentees] = useState([]);
 
-  const filteredMentees = mockMentees.filter(m => 
-    m.name.toLowerCase().includes(searchTerm.toLowerCase()) || m.wa.includes(searchTerm)
+  // Ambil daftar afiliator role 'user' dari Firestore
+  useEffect(() => {
+    const q = query(collection(db, 'affiliates'), where('role', '==', 'user'));
+    const unsubscribe = onSnapshot(q, (snapshot) => {
+      const list = [];
+      snapshot.forEach((docSnap) => {
+        list.push({ id: docSnap.id, ...docSnap.data() });
+      });
+      setMentees(list);
+    });
+
+    return () => unsubscribe();
+  }, []);
+
+  const filteredMentees = mentees.filter(m => 
+    (m.fullName || m.name || '').toLowerCase().includes(searchTerm.toLowerCase()) || 
+    (m.whatsapp || '').includes(searchTerm)
   );
 
   return (
@@ -39,27 +48,24 @@ export default function MentorDashboard({ user, onLogout }) {
       </nav>
 
       <main className="max-w-7xl mx-auto p-4 sm:p-6 space-y-6">
-        
-        {/* Banner Operasional CS */}
         <div className="p-5 rounded-2xl bg-gradient-to-r from-sky-950/60 to-[#0f172a] border border-sky-500/20 flex flex-col sm:flex-row justify-between items-center gap-4">
           <div>
-            <h3 className="text-base font-bold text-white">Jam Layanan Bimbingan: 08:00 - 21:00 WIB[span_11](start_span)[span_11](end_span)</h3>
-            <p className="text-xs text-slate-400 mt-1">Bimbing afiliator baru dalam memilih produk dan optimasi tautan affiliate TikTok/Shopee[span_12](start_span)[span_12](end_span).</p>
+            <h3 className="text-base font-bold text-white">Layanan Konsultasi &amp; Mentoring Afiliator[span_0](start_span)[span_0](end_span)</h3>
+            <p className="text-xs text-slate-400 mt-1">Bimbing member dalam memilih produk Shopee/TikTok dan optimasi materi konten promosi.[span_1](start_span)[span_1](end_span)</p>
           </div>
           <span className="px-3 py-1 bg-emerald-950 border border-emerald-500/30 text-emerald-400 text-xs font-semibold rounded-full">
-            ● Mentor Online
+            ● Mentor Online ({mentees.length} Member Terhubung)
           </span>
         </div>
 
-        {/* Tabel Afiliator Bimbingan */}
         <div className="p-6 rounded-2xl bg-[#0f172a] border border-slate-800 space-y-4">
           <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-3">
-            <h3 className="text-base font-bold text-white">Daftar Afiliator Bimbingan Anda</h3>
+            <h3 className="text-base font-bold text-white">Daftar Afiliator di Database</h3>
             <div className="relative w-full sm:w-64">
               <Search className="w-3.5 h-3.5 text-slate-400 absolute left-3 top-2.5" />
               <input 
                 type="text" 
-                placeholder="Cari nama atau WA..." 
+                placeholder="Cari nama atau WhatsApp..." 
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
                 className="w-full bg-[#070b14] border border-slate-800 rounded-xl py-1.5 pl-8 pr-3 text-xs text-white focus:outline-none focus:border-sky-500"
@@ -69,34 +75,36 @@ export default function MentorDashboard({ user, onLogout }) {
 
           <div className="overflow-x-auto">
             <table className="w-full text-left text-xs">
-              <thead className="border-b border-slate-800 text-slate-400 font-semibold bg-slate-900/50">
+              <thead className="border-b border-slate-800 text-slate-400 bg-slate-900/50">
                 <tr>
                   <th className="p-3">Nama Lengkap</th>
-                  <th className="p-3">Kota</th>
-                  <th className="p-3">Progres Belajar</th>
-                  <th className="p-3">Status</th>
+                  <th className="p-3">Kota / Domisili</th>
+                  <th className="p-3">Lisensi Pelatihan</th>
+                  <th className="p-3">Status Belajar</th>
                   <th className="p-3 text-right">Aksi Bimbingan</th>
                 </tr>
               </thead>
               <tbody className="divide-y divide-slate-800 text-slate-300">
                 {filteredMentees.map((m) => (
-                  <tr key={m.id} className="hover:bg-slate-800/30 transition">
-                    <td className="p-3 font-semibold text-white">{m.name}</td>
-                    <td className="p-3 text-slate-400">{m.city}</td>
-                    <td className="p-3 text-sky-400">{m.progress}</td>
+                  <tr key={m.id} className="hover:bg-slate-800/20">
+                    <td className="p-3 font-semibold text-white">{m.fullName || m.name || '-'}</td>
+                    <td className="p-3 text-slate-400">{m.city || '-'}</td>
                     <td className="p-3">
-                      <span className={`px-2 py-0.5 rounded text-[10px] font-bold ${m.status === 'Aktif' ? 'bg-emerald-950 text-emerald-400 border border-emerald-500/20' : 'bg-amber-950 text-amber-400 border border-amber-500/20'}`}>
-                        {m.status}
+                      <span className={`px-2 py-0.5 rounded text-[10px] font-bold ${
+                        m.trainingFeePaid ? 'bg-emerald-950 text-emerald-400 border border-emerald-500/20' : 'bg-slate-800 text-slate-400'
+                      }`}>
+                        {m.trainingFeePaid ? 'Premium Member' : 'Free Member'}
                       </span>
                     </td>
+                    <td className="p-3 text-sky-400">{m.learningProgress || 'Modul 1: Pengenalan'}</td>
                     <td className="p-3 text-right">
                       <a 
-                        href={`https://wa.me/${m.wa.replace(/^0/, '62')}`} 
+                        href={`https://wa.me/${(m.whatsapp || '').replace(/^0/, '62')}?text=Halo%20${encodeURIComponent(m.fullName || '')},%20saya%20mentor%20KinetiAffiliate%20siap%20membantu%20sesi%20bimbingan%20Anda`}
                         target="_blank" 
                         rel="noreferrer"
                         className="inline-flex items-center gap-1 px-3 py-1 bg-emerald-500/10 hover:bg-emerald-500/20 border border-emerald-500/30 text-emerald-400 rounded-lg text-xs font-semibold"
                       >
-                        <Send className="w-3 h-3" /> Hubungi via WA[span_13](start_span)[span_13](end_span)
+                        <Send className="w-3 h-3" /> Hubungi via WhatsApp
                       </a>
                     </td>
                   </tr>
@@ -105,7 +113,6 @@ export default function MentorDashboard({ user, onLogout }) {
             </table>
           </div>
         </div>
-
       </main>
     </div>
   );
